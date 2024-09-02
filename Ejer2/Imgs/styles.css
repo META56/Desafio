@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: url('ac2e9fb7a9dd93d4c845d817cfb997fb.jpeg') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+.sticker-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sticker img {
+    width: 100px;
+    height: 100px;
+}
+
+input[type="number"] {
+    width: 50px;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.message {
+    color: red;  /* Cambia el color del mensaje a rojo */
+    font-size: 24px;  /* Ajusta el tamaño del texto a 24px (puedes cambiarlo según prefieras) */
+    margin-top: 20px;  /* Añade un margen superior para separar del botón */
+    font-weight: bold;  /* Opcional: hace el texto en negrita */
+}

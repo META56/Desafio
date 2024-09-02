@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Password</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('img/429287.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        select, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        select:hover {
+            background-color: #f0f0f0;
+            border-color: #007bff;
+        }
+        select.error {
+            border: 2px solid red;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <select id="select1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <select id="select2">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <select id="select3">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <button onclick="verificarPassword()">Ingresar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function verificarPassword() {
+            "use strict";
+
+            const select1 = document.getElementById('select1');
+            const select2 = document.getElementById('select2');
+            const select3 = document.getElementById('select3');
+            const valor1 = select1.value;
+            const valor2 = select2.value;
+            const valor3 = select3.value;
+
+            const password = valor1 + valor2 + valor3;
+
+            const resultado = document.getElementById('resultado');
+
+            [select1, select2, select3].forEach(select => select.classList.remove('error'));
+            resultado.className = '';
+
+            if (password === '911' || password === '714') {
+                resultado.textContent = password === '911' ? 'Password 1 correcto' : 'Password 2 es correcto';
+                resultado.className = 'success';
+            } else {
+                resultado.textContent = 'Password incorrecto';
+                resultado.className = 'error';
+                [select1, select2, select3].forEach(select => select.classList.add('error'));
+            }
+        }
+    </script>
+</body>
+</html>

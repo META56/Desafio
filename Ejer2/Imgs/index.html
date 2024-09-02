@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticker Selector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sticker-container">
+        <div class="sticker">
+            <img src="01.jpeg" alt="Sticker 1">
+            <input type="number" id="sticker1" min="0" max="10" value="0">
+        </div>
+        <div class="sticker">
+            <img src="02.jpeg" alt="Sticker 2">
+            <input type="number" id="sticker2" min="0" max="10" value="0">
+        </div>
+        <div class="sticker">
+            <img src="03.jpeg" alt="Sticker 3">
+            <input type="number" id="sticker3" min="0" max="10" value="0">
+        </div>
+    </div>
+    <button type="button" onclick="checkStickers()">Check Stickers</button>
+    <div class="message" id="message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
